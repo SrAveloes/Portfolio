@@ -18,6 +18,11 @@
 </head>
 <body>
 
+  <!-- Glowing Background Blobs for Visual Depth -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
   <!-- --- HEADER / NAVBAR MÍNIMA --- -->
   <header class="header">
     <a href="#home" class="logo">
@@ -101,6 +106,30 @@
           <a href="#contact" class="btn btn-secondary">
             <i data-lucide="mail" style="width: 16px; height: 16px;"></i> Contato
           </a>
+        </div>
+      </div>
+
+      <!-- Visual de Pipeline de Dados Interativo (CSS) -->
+      <div class="hero-pipeline-visual">
+        <div class="pipeline-flow-container">
+          <div class="pipeline-node database" title="Fontes de Dados (SQL/API)">
+            <i data-lucide="database"></i>
+            <span>Fontes</span>
+          </div>
+          <div class="pipeline-flow-line line-1">
+            <span class="flow-particle"></span>
+          </div>
+          <div class="pipeline-node python" title="Tratamento & Automação (Python/Pentaho)">
+            <i data-lucide="cpu"></i>
+            <span>Processamento</span>
+          </div>
+          <div class="pipeline-flow-line line-2">
+            <span class="flow-particle"></span>
+          </div>
+          <div class="pipeline-node powerbi" title="Visualização Analítica (Power BI)">
+            <i data-lucide="bar-chart-3"></i>
+            <span>BI / Insights</span>
+          </div>
         </div>
       </div>
     </div>
@@ -669,6 +698,42 @@
                 Abrir Dashboard <i data-lucide="external-link"></i>
               </a>
             </div>
+          </div>
+        </div>
+
+        <!-- Case 9: Sala de Monitoramento -->
+        <div class="project-card" data-category="dashboards">
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">Grafana</span>
+              <span class="project-tag">Power BI</span>
+              <span class="project-tag">NOC</span>
+              <span class="project-tag">Monitoramento</span>
+            </div>
+            <h3 class="project-title">Central de Monitoramento Integrada (NOC)</h3>
+            
+            <div class="project-case-details">
+              <div class="case-part">
+                <strong>Problema</strong>
+                <p>Ausência de centralização no monitoramento de servidores, bancos de dados, fluxos de ETL e KPIs operacionais em tempo real.</p>
+              </div>
+              <div class="case-part">
+                <strong>Solução</strong>
+                <p>Estruturação de uma central de monitoramento (NOC) com 6 telas dedicadas exibindo dashboards unificados em Grafana e Power BI para infraestrutura e regras de negócios.</p>
+              </div>
+              <div class="case-part">
+                <strong>Tecnologias</strong>
+                <p>Grafana, Power BI, SQL Server, Jenkins, Windows Server.</p>
+              </div>
+              <div class="case-part result">
+                <strong>Resultado</strong>
+                <p>Visualização unificada de 100% da integridade de bancos, jobs e performance operacional, acelerando a detecção e correção de falhas.</p>
+              </div>
+            </div>
+            
+            <a href="javascript:void(0)" class="project-link view-case-btn" data-case="monitoramento">
+              Ver Detalhes do Case <i data-lucide="chevron-right"></i>
+            </a>
           </div>
         </div>
 
