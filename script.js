@@ -262,11 +262,9 @@ function doGet(e) {
       solution: "Implementação de uma sala de controle operacional (NOC) com 6 TVs exibindo em tempo real painéis integrados do Grafana (infraestrutura de TI/ETL) e Power BI (desempenho comercial e operacional).",
       tech: "Grafana, Power BI, SQL Server, Jenkins (orquestração de jobs de dados), Windows Server.",
       result: "Redução no tempo de indisponibilidade de serviços (downtime), detecção proativa de falhas em jobs de banco de dados e aumento da visibilidade operacional para os tomadores de decisão.",
-      hasVideo: false,
-      hasMonitorVideos: true,
-      monitorVideo1: "assets/monitor_video_1.mp4",
-      monitorVideo2: "assets/monitor_video_2.mp4",
-      images: ["assets/monitor_home.jpeg", "assets/monitor_1.jpeg", "assets/monitor_2.jpeg", "assets/monitor_3.jpeg", "assets/monitor_4.jpeg", "assets/monitor_5.jpeg"],
+      hasVideo: true,
+      videoSrc: "assets/monitor_video_2.mp4",
+      images: ["assets/monitor_1.jpeg", "assets/monitor_2.jpeg", "assets/monitor_3.jpeg", "assets/monitor_5.jpeg"],
       showSupabasePrint: false,
       isLandscape: true
     }
@@ -278,36 +276,30 @@ function doGet(e) {
 
     let mediaHTML = '';
     if (data.hasVideo) {
-      mediaHTML = `
-        <div class="phone-mockup-wrapper">
-          <div class="phone-mockup">
-            <video autoplay loop muted playsinline class="phone-video" id="drawer-video">
-              <source src="${data.videoSrc}" type="video/mp4">
-              Seu navegador não suporta vídeos.
-            </video>
-          </div>
-        </div>
-      `;
-    }
-
-    if (data.hasMonitorVideos) {
-      mediaHTML = `
-        <div style="margin-bottom: 20px;">
-          <h4 class="detail-subtitle"><i data-lucide="video" style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px;"></i> Gravações da Sala de Controle (NOC)</h4>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; justify-content: center; margin-bottom: 12px;">
+      if (data.isLandscape) {
+        mediaHTML = `
+          <div style="margin-bottom: 20px;">
+            <h4 class="detail-subtitle"><i data-lucide="video" style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px;"></i> Gravação da Sala de Controle (NOC)</h4>
             <div style="border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light); background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-              <video autoplay loop muted playsinline style="width: 100%; display: block;" class="monitor-drawer-video">
-                <source src="${data.monitorVideo1}" type="video/mp4">
-              </video>
-            </div>
-            <div style="border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light); background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-              <video autoplay loop muted playsinline style="width: 100%; display: block;" class="monitor-drawer-video">
-                <source src="${data.monitorVideo2}" type="video/mp4">
+              <video autoplay loop muted playsinline style="width: 100%; display: block;" id="drawer-video">
+                <source src="${data.videoSrc}" type="video/mp4">
+                Seu navegador não suporta vídeos.
               </video>
             </div>
           </div>
-        </div>
-      `;
+        `;
+      } else {
+        mediaHTML = `
+          <div class="phone-mockup-wrapper">
+            <div class="phone-mockup">
+              <video autoplay loop muted playsinline class="phone-video" id="drawer-video">
+                <source src="${data.videoSrc}" type="video/mp4">
+                Seu navegador não suporta vídeos.
+              </video>
+            </div>
+          </div>
+        `;
+      }
     }
 
     let imagesHTML = '';
