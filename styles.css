@@ -294,50 +294,55 @@ h1, h2, h3, h4, h5, h6 {
   user-select: none;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* --- THEME TOGGLE BUTTON (SUN / MOON) --- */
 .theme-toggle-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: rgba(15, 23, 42, 0.05);
+  background: rgba(15, 23, 42, 0.06);
   border: 1px solid var(--border-light);
-  color: var(--text-title);
   cursor: pointer;
   transition: var(--transition-fast);
-  margin-left: 8px;
   flex-shrink: 0;
+  z-index: 101;
 }
 
 .theme-toggle-btn:hover {
   background: var(--primary-blue-muted);
-  color: var(--primary-blue);
-  transform: scale(1.06);
+  transform: scale(1.08);
+}
+
+.theme-toggle-btn .icon-sun {
+  display: none !important;
+  color: #fbbf24 !important; /* Glowing warm gold sun */
+}
+
+.theme-toggle-btn .icon-moon {
+  display: inline-block !important;
+  color: #2563eb !important; /* Vivid royal blue moon in Light Mode */
 }
 
 html[data-theme="dark"] .theme-toggle-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
-html[data-theme="dark"] .icon-moon {
+html[data-theme="dark"] .theme-toggle-btn .icon-moon {
   display: none !important;
 }
 
-html[data-theme="dark"] .icon-sun {
+html[data-theme="dark"] .theme-toggle-btn .icon-sun {
   display: inline-block !important;
-  color: #fbbf24 !important;
-}
-
-html:not([data-theme="dark"]) .icon-sun {
-  display: none !important;
-}
-
-html:not([data-theme="dark"]) .icon-moon {
-  display: inline-block !important;
-  color: #0f172a !important;
+  color: #fbbf24 !important; /* Glowing warm gold sun */
 }
 
 .nav-cta {
