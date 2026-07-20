@@ -1312,6 +1312,17 @@ html[data-theme="dark"] select.form-input option {
   color: #ffffff !important;
 }
 
+html[data-theme="dark"] .pipeline-flow-container {
+  background: rgba(17, 24, 39, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html[data-theme="dark"] .pipeline-node {
+  background: #1e293b !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
 /* --- SYSTEM DARK MODE SUPPORT --- */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -1395,6 +1406,17 @@ html[data-theme="dark"] select.form-input option {
   .timeline-content, .skills-category, .about-bullets-card, .contact-form-container, .contact-method-card, .tech-badge-card {
     background: #1e293b;
     border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .pipeline-flow-container {
+    background: rgba(17, 24, 39, 0.85) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .pipeline-node {
+    background: #1e293b !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
   }
 
   .portfolio-tabs .tab-btn {
@@ -1966,12 +1988,13 @@ html[data-theme="dark"] select.form-input option {
   gap: 16px;
   width: 100%;
   max-width: 280px;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--bg-glass);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-light);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .pipeline-node {
@@ -1981,13 +2004,13 @@ html[data-theme="dark"] select.form-input option {
   width: 100%;
   padding: 12px 16px;
   border-radius: 8px;
-  background: #ffffff;
+  background: var(--bg-secondary);
   border: 1px solid var(--border-light);
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
   font-family: var(--font-header);
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--text-white);
+  color: var(--text-title);
   transition: all 0.2s ease;
 }
 
