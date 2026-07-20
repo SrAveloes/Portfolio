@@ -2,26 +2,26 @@
 
 /* --- Slate Dark Developer Design System --- */
 :root {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
-  --bg-card: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-primary: #0b0f19;
+  --bg-secondary: #111827;
+  --bg-card: #1e293b;
+  --bg-glass: rgba(15, 23, 42, 0.92);
   
   /* Cores Corporativas Sóbrias e Profissionais */
-  --primary-blue: #2563eb;
-  --primary-blue-muted: rgba(37, 99, 235, 0.05);
-  --primary-cyan: #0284c7;
+  --primary-blue: #3b82f6;
+  --primary-blue-muted: rgba(59, 130, 246, 0.15);
+  --primary-cyan: #38bdf8;
   
-  --text-main: #334155;
-  --text-muted: #64748b;
-  --text-white: #0f172a;
-  --text-title: #0f172a;
+  --text-main: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-white: #ffffff;
+  --text-title: #ffffff;
   
-  --title-grad-start: #0f172a;
-  --title-grad-end: #2563eb;
+  --title-grad-start: #ffffff;
+  --title-grad-end: #38bdf8;
   
-  --border-light: rgba(15, 23, 42, 0.06);
-  --border-focus: rgba(37, 99, 235, 0.3);
+  --border-light: rgba(255, 255, 255, 0.12);
+  --border-focus: rgba(56, 189, 248, 0.4);
   
   --font-header: 'Space Grotesk', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
@@ -150,11 +150,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-title {
   font-size: 1.8rem;
-  background: linear-gradient(135deg, var(--title-grad-start) 20%, var(--title-grad-end) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: var(--title-grad-start);
+  background: linear-gradient(135deg, #ffffff 15%, #38bdf8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: #ffffff !important;
 }
 
 .section-desc {
@@ -228,6 +228,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 6px;
+  color: #ffffff !important;
 }
 
 .logo-dot {
@@ -340,11 +341,11 @@ h1, h2, h3, h4, h5, h6 {
 .hero-title-name {
   font-size: 3.2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--title-grad-start) 20%, var(--title-grad-end) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: var(--title-grad-start);
+  background: linear-gradient(135deg, #ffffff 15%, #38bdf8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: #ffffff !important;
   line-height: 1.1;
   margin-bottom: 6px;
 }
@@ -1005,11 +1006,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-info-title {
   font-size: 1.8rem;
-  background: linear-gradient(135deg, var(--title-grad-start) 20%, var(--title-grad-end) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: var(--title-grad-start);
+  background: linear-gradient(135deg, #ffffff 15%, #38bdf8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: #ffffff !important;
   margin-bottom: 4px;
 }
 
