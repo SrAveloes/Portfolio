@@ -15,6 +15,10 @@
   --text-main: #334155;
   --text-muted: #64748b;
   --text-white: #0f172a;
+  --text-title: #0f172a;
+  
+  --title-grad-start: #0f172a;
+  --title-grad-end: #2563eb;
   
   --border-light: rgba(15, 23, 42, 0.06);
   --border-focus: rgba(37, 99, 235, 0.3);
@@ -146,9 +150,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-title {
   font-size: 1.8rem;
-  background: linear-gradient(135deg, var(--text-white) 40%, var(--primary-blue) 100%);
+  background: linear-gradient(135deg, var(--title-grad-start) 20%, var(--title-grad-end) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--title-grad-start);
 }
 
 .section-desc {
@@ -334,9 +340,11 @@ h1, h2, h3, h4, h5, h6 {
 .hero-title-name {
   font-size: 3.2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--text-white) 40%, var(--primary-blue) 100%);
+  background: linear-gradient(135deg, var(--title-grad-start) 20%, var(--title-grad-end) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--title-grad-start);
   line-height: 1.1;
   margin-bottom: 6px;
 }
@@ -997,7 +1005,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-info-title {
   font-size: 1.8rem;
-  color: var(--text-white);
+  background: linear-gradient(135deg, var(--title-grad-start) 20%, var(--title-grad-end) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--title-grad-start);
   margin-bottom: 4px;
 }
 
@@ -1201,10 +1213,35 @@ select.form-input option {
     
     --text-main: #cbd5e1;
     --text-muted: #94a3b8;
-    --text-white: #f8fafc;
+    --text-white: #ffffff;
+    --text-title: #ffffff;
     
-    --border-light: rgba(255, 255, 255, 0.1);
+    --title-grad-start: #ffffff;
+    --title-grad-end: #38bdf8;
+    
+    --border-light: rgba(255, 255, 255, 0.12);
     --border-focus: rgba(56, 189, 248, 0.4);
+  }
+
+  /* Explicit bright white & cyan gradient for all major titles in dark mode */
+  .section-title, .hero-title-name, .contact-info-title {
+    background: linear-gradient(135deg, #ffffff 15%, #38bdf8 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: #ffffff !important;
+  }
+
+  .logo span {
+    color: #ffffff !important;
+  }
+
+  .timeline-role, .project-title, .service-title, .skills-category-title, .about-bullets-card h4, .detail-subtitle, .drawer-content h3, .contact-method-details p {
+    color: #ffffff !important;
+  }
+
+  .case-part strong, .service-feature-item strong {
+    color: #38bdf8 !important;
   }
 
   body::before {
