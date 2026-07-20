@@ -150,11 +150,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-title {
   font-size: 1.8rem;
-  background: linear-gradient(135deg, #ffffff 15%, #38bdf8 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  font-weight: 700;
 }
 
 .section-desc {
@@ -341,11 +340,9 @@ h1, h2, h3, h4, h5, h6 {
 .hero-title-name {
   font-size: 3.2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #ffffff 15%, #38bdf8 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
   line-height: 1.1;
   margin-bottom: 6px;
 }
@@ -1006,11 +1003,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-info-title {
   font-size: 1.8rem;
-  background: linear-gradient(135deg, #ffffff 15%, #38bdf8 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  font-weight: 700;
   margin-bottom: 4px;
 }
 
@@ -1224,13 +1220,12 @@ select.form-input option {
     --border-focus: rgba(56, 189, 248, 0.4);
   }
 
-  /* Explicit bright white & cyan gradient for all major titles in dark mode */
+  /* Explicit solid bright white for all major titles */
   .section-title, .hero-title-name, .contact-info-title {
-    background: linear-gradient(135deg, #ffffff 15%, #38bdf8 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
     color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: none !important;
+    font-weight: 700 !important;
   }
 
   .logo span {
