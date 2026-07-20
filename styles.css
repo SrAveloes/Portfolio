@@ -1,27 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
 
-/* --- Slate Dark Developer Design System --- */
+/* --- Slate Developer Design System --- */
 :root {
-  --bg-primary: #0b0f19;
-  --bg-secondary: #111827;
-  --bg-card: #1e293b;
-  --bg-glass: rgba(15, 23, 42, 0.92);
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.85);
   
   /* Cores Corporativas Sóbrias e Profissionais */
-  --primary-blue: #3b82f6;
-  --primary-blue-muted: rgba(59, 130, 246, 0.15);
-  --primary-cyan: #38bdf8;
+  --primary-blue: #2563eb;
+  --primary-blue-muted: rgba(37, 99, 235, 0.05);
+  --primary-cyan: #0284c7;
   
-  --text-main: #cbd5e1;
-  --text-muted: #94a3b8;
-  --text-white: #ffffff;
-  --text-title: #ffffff;
+  --text-main: #334155;
+  --text-muted: #64748b;
+  --text-white: #0f172a;
+  --text-title: #0f172a;
   
-  --title-grad-start: #ffffff;
-  --title-grad-end: #38bdf8;
-  
-  --border-light: rgba(255, 255, 255, 0.12);
-  --border-focus: rgba(56, 189, 248, 0.4);
+  --border-light: rgba(15, 23, 42, 0.08);
+  --border-focus: rgba(37, 99, 235, 0.3);
   
   --font-header: 'Space Grotesk', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
@@ -150,9 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-title {
   font-size: 1.8rem;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  background: none !important;
+  color: var(--text-title);
   font-weight: 700;
 }
 
@@ -227,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #ffffff !important;
+  color: var(--text-title);
 }
 
 .logo-dot {
@@ -340,9 +335,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-title-name {
   font-size: 3.2rem;
   font-weight: 700;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  background: none !important;
+  color: var(--text-title);
   line-height: 1.1;
   margin-bottom: 6px;
 }
@@ -1003,9 +996,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-info-title {
   font-size: 1.8rem;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  background: none !important;
+  color: var(--text-title);
   font-weight: 700;
   margin-bottom: 4px;
 }
