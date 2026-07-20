@@ -242,6 +242,50 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-white);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 2px 6px;
+  margin-left: 8px;
+  height: 26px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 12px;
+  transition: var(--transition-fast);
+  line-height: 1;
+}
+
+.lang-btn:hover {
+  color: var(--text-white);
+}
+
+.lang-btn.active {
+  color: #ffffff;
+  background: var(--primary-blue);
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.4);
+}
+
+.lang-divider {
+  color: var(--border-light);
+  font-size: 0.65rem;
+  user-select: none;
+}
+
 .nav-cta {
   font-size: 0.8rem;
   padding: 6px 12px;
@@ -1036,6 +1080,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transition-fast);
 }
 
+select.form-input option {
+  background-color: var(--bg-secondary);
+  color: var(--text-white);
+}
+
 .form-input:focus, .form-textarea:focus {
   border-color: var(--primary-blue);
 }
@@ -1691,26 +1740,32 @@ h1, h2, h3, h4, h5, h6 {
   width: 6px;
   height: 6px;
   border-radius: 50%;
+  animation: flowStream 1.8s infinite linear;
+}
+
+.line-1 .flow-particle {
   background: var(--primary-blue);
   box-shadow: 0 0 8px var(--primary-blue);
-  animation: flowDown 1.8s infinite linear;
 }
 
 .line-2 .flow-particle {
   background: var(--primary-cyan);
   box-shadow: 0 0 8px var(--primary-cyan);
-  animation-delay: 0.9s;
 }
 
-@keyframes flowDown {
+.flow-particle.p1 { animation-delay: 0s; }
+.flow-particle.p2 { animation-delay: 0.9s; }
+.flow-particle.p3 { animation-delay: 0.45s; }
+
+@keyframes flowStream {
   0% {
     top: 0%;
     opacity: 0;
   }
-  10% {
+  15% {
     opacity: 1;
   }
-  90% {
+  85% {
     opacity: 1;
   }
   100% {
@@ -1724,6 +1779,122 @@ h1, h2, h3, h4, h5, h6 {
   .hero-pipeline-visual {
     display: none;
   }
+}
+
+/* Strip de Métricas Operacionais */
+.metrics-strip {
+  padding: 40px 0 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.metric-item {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.015);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.metric-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.metric-number {
+  font-family: var(--font-header);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  line-height: 1;
+}
+
+.metric-plus {
+  font-family: var(--font-header);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-cyan);
+  line-height: 1;
+  vertical-align: top;
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* Scroll Reveal Animado */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tooltip Customizado para Nós da Pipeline */
+.pipeline-node {
+  position: relative;
+}
+
+.pipeline-node::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.pipeline-node:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 

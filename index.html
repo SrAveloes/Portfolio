@@ -30,16 +30,21 @@
     </a>
     
     <nav class="nav-links">
-      <a href="#home" class="nav-link active">Início</a>
-      <a href="#experience" class="nav-link">Experiência</a>
-      <a href="#projects" class="nav-link">Cases</a>
-      <a href="#areas" class="nav-link">Atuação</a>
-      <a href="#technologies" class="nav-link">Tecnologias</a>
-      <a href="#trajectory" class="nav-link">Trajetória</a>
-      <a href="#contact" class="nav-link">Contato</a>
+      <a href="#home" class="nav-link active" data-i18n="nav_home">Início</a>
+      <a href="#experience" class="nav-link" data-i18n="nav_exp">Experiência</a>
+      <a href="#projects" class="nav-link" data-i18n="nav_cases">Cases</a>
+      <a href="#areas" class="nav-link" data-i18n="nav_areas">Atuação</a>
+      <a href="#technologies" class="nav-link" data-i18n="nav_tech">Tecnologias</a>
+      <a href="#trajectory" class="nav-link" data-i18n="nav_about">Trajetória</a>
+      <a href="#contact" class="nav-link" data-i18n="nav_contact">Contato</a>
       <a href="https://www.linkedin.com/in/gustavo-aveloes/" target="_blank" class="nav-link" style="display: inline-flex; align-items: center; gap: 4px;" title="LinkedIn">
         <img src="linkedin.png" alt="LinkedIn" style="width: 14px; height: 14px; object-fit: contain; vertical-align: middle;"> LinkedIn
       </a>
+      <div class="lang-switch">
+        <button id="lang-pt" class="lang-btn active" title="Português">PT</button>
+        <span class="lang-divider">|</span>
+        <button id="lang-en" class="lang-btn" title="English">EN</button>
+      </div>
     </nav>
     
     <div class="menu-toggle" id="menu-toggle">
@@ -54,30 +59,30 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <h1 class="hero-title-name">Gustavo Aveloes</h1>
-        <div class="hero-subtitle-role">
+        <div class="hero-subtitle-role" data-i18n="hero_role">
           Dados • Automação • Desenvolvimento
         </div>
         
-        <p class="hero-desc">
-          Especialista em Engenharia de Dados, Business Intelligence, Integrações, Aplicações Corporativas e Soluções Tecnológicas. Atuo desde 2018 desenvolvendo dashboards corporativos, automações, pipelines de dados e aplicativos focados em eficiência operacional e tomada de decisão.
+        <p class="hero-desc" data-i18n="hero_desc">
+          Oi, sou o Gustavo. Atuo simplificando a tomada de decisão e a eficiência de equipes através dos dados. Minha especialidade é estruturar a engenharia de dados de ponta a ponta (pipelines, APIs e automações) e traduzir esse fluxo em interfaces inteligentes (dashboards de BI e aplicativos corporativos sob medida) para que as empresas tomem decisões com clareza e sem tarefas manuais repetitivas.
         </p>
         
         <div class="hero-sectors">
-          <h4>Setores de Atuação:</h4>
+          <h4 data-i18n="hero_sectors_title">Setores de Atuação:</h4>
           <div class="hero-sector-list">
-            <span class="hero-sector-tag">Reciclagem</span>
-            <span class="hero-sector-tag">Mercado de Apostas (iGaming)</span>
-            <span class="hero-sector-tag">Cemitérios</span>
-            <span class="hero-sector-tag">Varejo</span>
-            <span class="hero-sector-tag">Indústria Automotiva</span>
-            <span class="hero-sector-tag">Auditoria em TI</span>
-            <span class="hero-sector-tag">Trade Marketing</span>
-            <span class="hero-sector-tag">Educação (Professor de TI)</span>
+            <span class="hero-sector-tag" data-i18n="sec_recic">Reciclagem</span>
+            <span class="hero-sector-tag" data-i18n="sec_igaming">Mercado de Apostas (iGaming)</span>
+            <span class="hero-sector-tag" data-i18n="sec_cem">Cemitérios</span>
+            <span class="hero-sector-tag" data-i18n="sec_varejo">Varejo</span>
+            <span class="hero-sector-tag" data-i18n="sec_auto">Indústria Automotiva</span>
+            <span class="hero-sector-tag" data-i18n="sec_audit">Auditoria em TI</span>
+            <span class="hero-sector-tag" data-i18n="sec_trade">Trade Marketing</span>
+            <span class="hero-sector-tag" data-i18n="sec_edu">Educação (Professor de TI)</span>
           </div>
         </div>
 
         <div class="hero-tech-row">
-          <h4>Tecnologias Principais:</h4>
+          <h4 data-i18n="hero_tech_title">Tecnologias Principais:</h4>
           <div class="hero-tech-list">
             <span class="hero-tech-badge">SQL</span>
             <span class="hero-tech-badge">Python</span>
@@ -98,13 +103,13 @@
 
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">
-            <i data-lucide="folder-git-2" style="width: 16px; height: 16px;"></i> Ver Projetos
+            <i data-lucide="folder-git-2" style="width: 16px; height: 16px;"></i> <span data-i18n="btn_projects">Ver Projetos</span>
           </a>
           <a href="https://www.linkedin.com/in/gustavo-aveloes/" target="_blank" class="btn btn-secondary">
             <img src="linkedin.png" alt="LinkedIn" style="width: 16px; height: 16px; object-fit: contain; vertical-align: middle; margin-right: 4px;"> LinkedIn
           </a>
           <a href="#contact" class="btn btn-secondary">
-            <i data-lucide="mail" style="width: 16px; height: 16px;"></i> Contato
+            <i data-lucide="mail" style="width: 16px; height: 16px;"></i> <span data-i18n="btn_contact">Contato</span>
           </a>
         </div>
       </div>
@@ -112,21 +117,22 @@
       <!-- Visual de Pipeline de Dados Interativo (CSS) -->
       <div class="hero-pipeline-visual">
         <div class="pipeline-flow-container">
-          <div class="pipeline-node database" title="Fontes de Dados (SQL/API)">
+          <div class="pipeline-node database" data-tooltip="APIs, SQL, Planilhas, Sensores IoT">
             <i data-lucide="database"></i>
             <span>Fontes</span>
           </div>
           <div class="pipeline-flow-line line-1">
-            <span class="flow-particle"></span>
+            <span class="flow-particle p1"></span>
+            <span class="flow-particle p2"></span>
           </div>
-          <div class="pipeline-node python" title="Tratamento & Automação (Python/Pentaho)">
+          <div class="pipeline-node python" data-tooltip="Python, Pentaho, Supabase, Jenkins">
             <i data-lucide="cpu"></i>
             <span>Processamento</span>
           </div>
           <div class="pipeline-flow-line line-2">
-            <span class="flow-particle"></span>
+            <span class="flow-particle p3"></span>
           </div>
-          <div class="pipeline-node powerbi" title="Visualização Analítica (Power BI)">
+          <div class="pipeline-node powerbi" data-tooltip="Power BI, Grafana, Tableau, Metabase">
             <i data-lucide="bar-chart-3"></i>
             <span>BI / Insights</span>
           </div>
@@ -139,9 +145,9 @@
   <section id="pipeline" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Fluxo de Entrega</span>
-        <h2 class="section-title">O que eu construo</h2>
-        <p class="section-desc">Estruturo soluções integradas de ponta a ponta, ligando desde a coleta na origem física ou digital até a entrega operacional.</p>
+        <span class="section-tag" data-i18n="diff_tag">Fluxo de Entrega</span>
+        <h2 class="section-title" data-i18n="diff_title">O que eu construo</h2>
+        <p class="section-desc" data-i18n="diff_desc">Estruturo soluções integradas de ponta a ponta, ligando desde a coleta na origem física ou digital até a entrega operacional.</p>
       </div>
       
       <div class="pipeline-container">
@@ -202,9 +208,9 @@
   <section id="experience" class="section" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Histórico Real</span>
-        <h2 class="section-title">Experiência Profissional</h2>
-        <p class="section-desc">Atuação corporativa sólida focado no desenvolvimento de pipelines de dados, painéis gerenciais e monitoramento.</p>
+        <span class="section-tag" data-i18n="exp_tag">Minha Jornada</span>
+        <h2 class="section-title" data-i18n="exp_title">Experiência Profissional</h2>
+        <p class="section-desc" data-i18n="exp_desc">Minha caminhada profissional desenvolvendo inteligência de dados, automações de processos e sistemas corporativos sob medida.</p>
       </div>
       
       <div class="timeline">
@@ -536,15 +542,15 @@
   <section id="projects" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Cases Práticos</span>
-        <h2 class="section-title">Casos de Sucesso</h2>
-        <p class="section-desc">Projetos desenvolvidos sob medida detalhando o problema de origem, a abordagem técnica e o resultado obtido.</p>
+        <span class="section-tag" data-i18n="proj_tag">Portfólio</span>
+        <h2 class="section-title" data-i18n="proj_title">Projetos em Destaque</h2>
+        <p class="section-desc" data-i18n="proj_desc">Uma seleção de desafios reais que resolvi, detalhando o problema de origem, a arquitetura da solução e o impacto gerado.</p>
       </div>
       
       <div class="portfolio-tabs">
-        <button class="tab-btn active" data-filter="all">Todos</button>
-        <button class="tab-btn" data-filter="apps">Aplicativos</button>
-        <button class="tab-btn" data-filter="dashboards">Dashboards BI</button>
+        <button class="tab-btn active" data-filter="all" data-i18n="tab_all">Todos</button>
+        <button class="tab-btn" data-filter="apps" data-i18n="tab_apps">Aplicativos</button>
+        <button class="tab-btn" data-filter="dashboards" data-i18n="tab_dash">Dashboards BI</button>
       </div>
       
       <div class="projects-grid">
@@ -557,29 +563,29 @@
               <span class="project-tag">Supabase</span>
               <span class="project-tag">Resend API</span>
             </div>
-            <h3 class="project-title">Auditoria e Cadastro de Ativos Corporativos</h3>
+            <h3 class="project-title" data-i18n="p1_title">Auditoria e Cadastro de Ativos Corporativos</h3>
             
             <div class="project-case-details">
               <div class="case-part">
-                <strong>Problema</strong>
-                <p>Auditorias e inventários manuais lentos, dependentes de planilhas locais e vulneráveis a erros e perdas de imagens.</p>
+                <strong data-i18n="lbl_problem">Problema</strong>
+                <p data-i18n="p1_prob">Auditorias e inventários manuais lentos, dependentes de planilhas locais e vulneráveis a erros e perdas de imagens.</p>
               </div>
               <div class="case-part">
-                <strong>Solução</strong>
-                <p>Aplicativo mobile com autenticação biométrica (impressão digital), tela de cadastro dinâmico com fotos salvas no storage do Supabase e envio de relatórios automáticos via API do Resend.</p>
+                <strong data-i18n="lbl_solution">Solução</strong>
+                <p data-i18n="p1_sol">Aplicativo mobile com autenticação biométrica (impressão digital), tela de cadastro dinâmico com fotos salvas no storage do Supabase e envio de relatórios automáticos via API do Resend.</p>
               </div>
               <div class="case-part">
-                <strong>Tecnologias</strong>
-                <p>FlutterFlow, Supabase (Autenticação/Banco de Dados/Storage), Resend Email API.</p>
+                <strong data-i18n="lbl_tech">Tecnologias</strong>
+                <p data-i18n="p1_tech">FlutterFlow, Supabase (Autenticação/Banco de Dados/Storage), Resend Email API.</p>
               </div>
               <div class="case-part result">
-                <strong>Resultado</strong>
-                <p>Digitalização completa do processo, auditoria de ativos em tempo real e eliminação de relatórios manuais de conferência.</p>
+                <strong data-i18n="lbl_result">Resultado</strong>
+                <p data-i18n="p1_res">Digitalização completa do processo, auditoria de ativos em tempo real e eliminação de relatórios manuais de conferência.</p>
               </div>
             </div>
             
             <a href="javascript:void(0)" class="project-link view-case-btn" data-case="ativos">
-              Ver Detalhes do Case <i data-lucide="chevron-right"></i>
+              <span data-i18n="btn_details">Ver Detalhes do Case</span> <i data-lucide="chevron-right"></i>
             </a>
           </div>
         </div>
@@ -592,29 +598,29 @@
               <span class="project-tag">Google Sheets</span>
               <span class="project-tag">Apps Script</span>
             </div>
-            <h3 class="project-title">Visualizador Analítico de Planilhas via Apps Script</h3>
+            <h3 class="project-title" data-i18n="p2_title">Visualizador Analítico de Planilhas via Apps Script</h3>
             
             <div class="project-case-details">
               <div class="case-part">
-                <strong>Problema</strong>
-                <p>Dificuldade para acessar e cruzar informações de projetos que estavam distribuídos em múltiplas planilhas no Google Drive por equipes sem acesso a computadores.</p>
+                <strong data-i18n="lbl_problem">Problema</strong>
+                <p data-i18n="p2_prob">Dificuldade para acessar e cruzar informações de projetos que estavam distribuídos em múltiplas planilhas no Google Drive por equipes sem acesso a computadores.</p>
               </div>
               <div class="case-part">
-                <strong>Solução</strong>
-                <p>Aplicativo móvel conectado a uma API REST gerada no Google Apps Script, estruturando e demonstrando as informações setoriais de forma limpa em duas visões internas de programas.</p>
+                <strong data-i18n="lbl_solution">Solução</strong>
+                <p data-i18n="p2_sol">Aplicativo móvel conectado a uma API REST gerada no Google Apps Script, estruturando e demonstrando as informações setoriais de forma limpa em duas visões internas de programas.</p>
               </div>
               <div class="case-part">
-                <strong>Tecnologias</strong>
-                <p>FlutterFlow, Google Sheets, Google Apps Script (REST Endpoint).</p>
+                <strong data-i18n="lbl_tech">Tecnologias</strong>
+                <p data-i18n="p2_tech">FlutterFlow, Google Sheets, Google Apps Script (REST Endpoint).</p>
               </div>
               <div class="case-part result">
-                <strong>Resultado</strong>
-                <p>Acesso rápido no celular a dados de andamento operacional, reduzindo o tempo de consulta de 15 minutos para menos de 10 segundos.</p>
+                <strong data-i18n="lbl_result">Resultado</strong>
+                <p data-i18n="p2_res">Acesso rápido no celular a dados de andamento operacional, reduzindo o tempo de consulta de 15 minutos para menos de 10 segundos.</p>
               </div>
             </div>
             
             <a href="javascript:void(0)" class="project-link view-case-btn" data-case="sheets">
-              Ver Detalhes do Case <i data-lucide="chevron-right"></i>
+              <span data-i18n="btn_details">Ver Detalhes do Case</span> <i data-lucide="chevron-right"></i>
             </a>
           </div>
         </div>
@@ -628,33 +634,33 @@
               <span class="project-tag">Logística</span>
               <span class="project-tag">Automação</span>
             </div>
-            <h3 class="project-title">Monitoramento de SLA de Entregas e E-commerce</h3>
+            <h3 class="project-title" data-i18n="p3_title">Monitoramento de SLA de Entregas e E-commerce</h3>
             
             <div class="project-case-details">
               <div class="case-part">
-                <strong>Problema</strong>
-                <p>Dificuldade em acompanhar em tempo real o cumprimento do SLA de entregas por loja e identificar quais pedidos estavam em risco ou atrasados.</p>
+                <strong data-i18n="lbl_problem">Problema</strong>
+                <p data-i18n="p3_prob">Dificuldade em acompanhar em tempo real o cumprimento do SLA de entregas por loja e identificar quais pedidos estavam em risco ou atrasados.</p>
               </div>
               <div class="case-part">
-                <strong>Solução</strong>
-                <p>Dashboard de monitoramento conectado ao banco de dados operacional e integrado a um script em Python que notifica automaticamente via WhatsApp as lojas com alertas de pedidos atrasando.</p>
+                <strong data-i18n="lbl_solution">Solução</strong>
+                <p data-i18n="p3_sol">Dashboard de monitoramento conectado ao banco de dados operacional e integrado a um script em Python que notifica automaticamente via WhatsApp as lojas com alertas de pedidos atrasando.</p>
               </div>
               <div class="case-part">
-                <strong>Tecnologias</strong>
-                <p>Power BI, Python (Automação de Alertas WhatsApp), SQL, ETL.</p>
+                <strong data-i18n="lbl_tech">Tecnologias</strong>
+                <p data-i18n="p3_tech">Power BI, Python (Automação de Alertas WhatsApp), SQL, ETL.</p>
               </div>
               <div class="case-part result">
-                <strong>Resultado</strong>
-                <p>Tempo de resposta imediato das equipes de loja para faturamento/separação de pedidos críticos, reduzindo o percentual de atrasos gerais.</p>
+                <strong data-i18n="lbl_result">Resultado</strong>
+                <p data-i18n="p3_res">Tempo de resposta imediato das equipes de loja para faturamento/separação de pedidos críticos, reduzindo o percentual de atrasos gerais.</p>
               </div>
             </div>
             
             <div style="display: flex; gap: 12px; align-items: center; margin-top: auto;">
               <a href="javascript:void(0)" class="project-link view-case-btn" data-case="sla" style="margin-right: auto;">
-                Ver Detalhes do Case <i data-lucide="chevron-right"></i>
+                <span data-i18n="btn_details">Ver Detalhes do Case</span> <i data-lucide="chevron-right"></i>
               </a>
               <a href="https://app.powerbi.com/view?r=eyJrIjoiNTZhODk3NTctOTZhYy00MmUxLTlkNGQtMTYzZWQzMzc2ZjQ5IiwidCI6IjBjMzA1M2ViLWY4NDAtNDc0Ni05NWQ0LTQ1MDVkNmVjYzRiMiJ9" target="_blank" class="project-link" style="color: var(--primary-cyan);">
-                Abrir Dashboard <i data-lucide="external-link"></i>
+                <span data-i18n="btn_dashboard">Abrir Dashboard</span> <i data-lucide="external-link"></i>
               </a>
             </div>
           </div>
@@ -669,33 +675,33 @@
               <span class="project-tag">Financeiro</span>
               <span class="project-tag">DAX</span>
             </div>
-            <h3 class="project-title">Controladoria Gerencial e DRE Operacional</h3>
+            <h3 class="project-title" data-i18n="p4_title">Controladoria Gerencial e DRE Operacional</h3>
             
             <div class="project-case-details">
               <div class="case-part">
-                <strong>Problema</strong>
-                <p>A equipe necessitava de uma DRE operacional estruturada para a consolidação ágil e centralizada dos resultados gerais da empresa.</p>
+                <strong data-i18n="lbl_problem">Problema</strong>
+                <p data-i18n="p4_prob">A equipe necessitava de uma DRE operacional estruturada para a consolidação ágil e centralizada dos resultados gerais da empresa.</p>
               </div>
               <div class="case-part">
-                <strong>Solução</strong>
-                <p>Painel analítico conectando banco SQL Server para unificar o fluxo de controladoria, estruturando a DRE de forma dinâmica com visões de drill-down por filial e análises de margem.</p>
+                <strong data-i18n="lbl_solution">Solução</strong>
+                <p data-i18n="p4_sol">Painel analítico conectando banco SQL Server para unificar o fluxo de controladoria, estruturando a DRE de forma dinâmica com visões de drill-down por filial e análises de margem.</p>
               </div>
               <div class="case-part">
-                <strong>Tecnologias</strong>
-                <p>Power BI, DAX avançado, SQL Server, ETL, Modelagem Dimensional.</p>
+                <strong data-i18n="lbl_tech">Tecnologias</strong>
+                <p data-i18n="p4_tech">Power BI, DAX avançado, SQL Server, ETL, Modelagem Dimensional.</p>
               </div>
               <div class="case-part result">
-                <strong>Resultado</strong>
-                <p>Fechamento imediato da DRE operacional por filial, simplificando a análise de lucratividade e reduzindo o tempo administrativo.</p>
+                <strong data-i18n="lbl_result">Resultado</strong>
+                <p data-i18n="p4_res">Fechamento imediato da DRE operacional por filial, simplificando a análise de lucratividade e reduzindo o tempo administrativo.</p>
               </div>
             </div>
             
             <div style="display: flex; gap: 12px; align-items: center; margin-top: auto;">
               <a href="javascript:void(0)" class="project-link view-case-btn" data-case="dre" style="margin-right: auto;">
-                Ver Detalhes do Case <i data-lucide="chevron-right"></i>
+                <span data-i18n="btn_details">Ver Detalhes do Case</span> <i data-lucide="chevron-right"></i>
               </a>
               <a href="https://app.powerbi.com/view?r=eyJrIjoiMjczMmNkYWYtMDNkNy00MzNkLTg4ZDYtN2M0YWUxOGRjMmJiIiwidCI6IjBjMzA1M2ViLWY4NDAtNDc0Ni05NWQ0LTQ1MDVkNmVjYzRiMiJ9" target="_blank" class="project-link" style="color: var(--primary-cyan);">
-                Abrir Dashboard <i data-lucide="external-link"></i>
+                <span data-i18n="btn_dashboard">Abrir Dashboard</span> <i data-lucide="external-link"></i>
               </a>
             </div>
           </div>
@@ -710,29 +716,29 @@
               <span class="project-tag">NOC</span>
               <span class="project-tag">Monitoramento</span>
             </div>
-            <h3 class="project-title">Central de Monitoramento Integrada (NOC)</h3>
+            <h3 class="project-title" data-i18n="p5_title">Central de Monitoramento Integrada (NOC)</h3>
             
             <div class="project-case-details">
               <div class="case-part">
-                <strong>Problema</strong>
-                <p>Ausência de centralização no monitoramento de servidores, bancos de dados, fluxos de ETL e KPIs operacionais em tempo real.</p>
+                <strong data-i18n="lbl_problem">Problema</strong>
+                <p data-i18n="p5_prob">Ausência de centralização no monitoramento de servidores, bancos de dados, fluxos de ETL e KPIs operacionais em tempo real.</p>
               </div>
               <div class="case-part">
-                <strong>Solução</strong>
-                <p>Estruturação de uma central de monitoramento (NOC) com 6 telas dedicadas exibindo dashboards unificados em Grafana e Power BI para infraestrutura e regras de negócios.</p>
+                <strong data-i18n="lbl_solution">Solução</strong>
+                <p data-i18n="p5_sol">Estruturação de uma central de monitoramento (NOC) com 6 telas dedicadas exibindo dashboards unificados em Grafana e Power BI para infraestrutura e regras de negócios.</p>
               </div>
               <div class="case-part">
-                <strong>Tecnologias</strong>
-                <p>Grafana, Power BI, SQL Server, Jenkins, Windows Server.</p>
+                <strong data-i18n="lbl_tech">Tecnologias</strong>
+                <p data-i18n="p5_tech">Grafana, Power BI, SQL Server, Jenkins, Windows Server.</p>
               </div>
               <div class="case-part result">
-                <strong>Resultado</strong>
-                <p>Visualização unificada de 100% da integridade de bancos, jobs e performance operacional, acelerando a detecção e correção de falhas.</p>
+                <strong data-i18n="lbl_result">Resultado</strong>
+                <p data-i18n="p5_res">Visualização unificada de 100% da integridade de bancos, jobs e performance operacional, acelerando a detecção e correção de falhas.</p>
               </div>
             </div>
             
             <a href="javascript:void(0)" class="project-link view-case-btn" data-case="monitoramento">
-              Ver Detalhes do Case <i data-lucide="chevron-right"></i>
+              <span data-i18n="btn_details">Ver Detalhes do Case</span> <i data-lucide="chevron-right"></i>
             </a>
           </div>
         </div>
@@ -745,25 +751,34 @@
               <span class="project-tag">ARIMA / SARIMA</span>
               <span class="project-tag">Loterias & Apostas</span>
             </div>
-            <h3 class="project-title">Modelagem de Séries Temporais e GGR para Apostas</h3>
+            <h3 class="project-title" data-i18n="p6_title">Modelagem de Séries Temporais e GGR para Apostas</h3>
             
             <div class="project-case-details">
               <div class="case-part">
-                <strong>Problema</strong>
-                <p>Falta de visão unificada do volume de apostas, perfil dos apostadores e margem operacional líquida (GGR).</p>
+                <strong data-i18n="lbl_problem">Problema</strong>
+                <p data-i18n="p6_prob">Falta de visão unificada do volume de apostas, perfil dos apostadores e margem operacional líquida (GGR).</p>
               </div>
               <div class="case-part">
-                <strong>Solução</strong>
-                <p>Dashboard analítico unificado conectado a banco de dados de transações com aplicação integrada de algoritmos estatísticos ARIMA/SARIMA para prever volumes futuros de jogos.</p>
+                <strong data-i18n="lbl_solution">Solução</strong>
+                <p data-i18n="p6_sol">Dashboard analítico unificado conectado a banco de dados de transações com aplicação integrada de algoritmos estatísticos ARIMA/SARIMA para prever volumes futuros de jogos.</p>
               </div>
               <div class="case-part">
-                <strong>Tecnologias</strong>
-                <p>Power BI, DAX avançado, Modelagem SQL, Algoritmos Estatísticos (ARIMA/SARIMA em Python).</p>
+                <strong data-i18n="lbl_tech">Tecnologias</strong>
+                <p data-i18n="p6_tech">Power BI, DAX avançado, Modelagem SQL, Algoritmos Estatísticos (ARIMA/SARIMA em Python).</p>
               </div>
               <div class="case-part result">
-                <strong>Resultado</strong>
-                <p>Identificação ágil de tendências de apostas com alta precisão preditiva, permitindo o provisionamento estratégico e otimização de campanhas de retenção.</p>
+                <strong data-i18n="lbl_result">Resultado</strong>
+                <p data-i18n="p6_res">Identificação ágil de tendências de apostas com alta precisão preditiva, permitindo o provisionamento estratégico e otimização de campanhas de retenção.</p>
               </div>
+            </div>
+            
+            <div style="display: flex; gap: 12px; align-items: center; margin-top: auto;">
+              <a href="javascript:void(0)" class="project-link view-case-btn" data-case="apostas" style="margin-right: auto;">
+                <span data-i18n="btn_details">Ver Detalhes do Case</span> <i data-lucide="chevron-right"></i>
+              </a>
+              <a href="https://app.powerbi.com/view?r=eyJrIjoiNjQ3YWNmNDItN2NlMS00ZmY4LTk5OGMtMzIwNDI3ZjZlMGY1IiwidCI6IjBjMzA1M2ViLWY4NDAtNDc0Ni05NWQ0LTQ1MDVkNmVjYzRiMiJ9" target="_blank" class="project-link" style="color: var(--primary-cyan);">
+                <span data-i18n="btn_dashboard">Abrir Dashboard</span> <i data-lucide="external-link"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -869,9 +884,9 @@
   <section id="areas" class="section" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Competências Chave</span>
-        <h2 class="section-title">Áreas de Atuação</h2>
-        <p class="section-desc">Especialidades técnicas desenvolvidas na modelagem de arquiteturas de dados e entrega de soluções corporativas.</p>
+        <span class="section-tag" data-i18n="areas_tag">Especialidades</span>
+        <h2 class="section-title" data-i18n="areas_title">Como posso te ajudar</h2>
+        <p class="section-desc" data-i18n="areas_desc">Minhas frentes de atuação com foco em simplificar o seu dia a dia operacional e gerar inteligência prática.</p>
       </div>
       
       <div class="services-grid">
@@ -984,9 +999,9 @@
   <section id="technologies" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Tecnologias</span>
-        <h2 class="section-title">Tecnologias que Utilizo</h2>
-        <p class="section-desc">Linguagens de programação, ferramentas de banco, orquestradores e hardware aplicados no desenvolvimento.</p>
+        <span class="section-tag" data-i18n="tech_tag">Tecnologias</span>
+        <h2 class="section-title" data-i18n="tech_title">Tecnologias que Utilizo</h2>
+        <p class="section-desc" data-i18n="tech_desc">Linguagens de programação, ferramentas de banco, orquestradores e hardware aplicados no desenvolvimento.</p>
       </div>
       
       <div class="tech-badges-grid">
@@ -1082,9 +1097,9 @@
   <section id="skills" class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Competências</span>
-        <h2 class="section-title">Habilidades de Mercado</h2>
-        <p class="section-desc">Divisão das competências técnicas estruturadas de acordo com as necessidades operacionais corporativas.</p>
+        <span class="section-tag" data-i18n="skills_tag">Competências</span>
+        <h2 class="section-title" data-i18n="skills_title">Habilidades de Mercado</h2>
+        <p class="section-desc" data-i18n="skills_desc">Divisão das competências técnicas estruturadas de acordo com as necessidades operacionais corporativas.</p>
       </div>
       
       <div class="skills-wrapper">
@@ -1161,16 +1176,16 @@
     <div class="container about-grid">
       
       <div class="about-content">
-        <span class="section-tag">A Trajetória</span>
-        <h2 class="section-title">Trajetória Profissional</h2>
+        <span class="section-tag" data-i18n="traj_tag">A Trajetória</span>
+        <h2 class="section-title" data-i18n="traj_title">Trajetória Profissional</h2>
         <p>
-          Minha jornada na tecnologia iniciou-se focada no cerne das decisões corporativas: a inteligência e visualização de dados. Atuando desde 2018 com BI (Business Intelligence) e desenvolvimento, acumulei forte habilidade em traduzir dores de negócios de RH, estoque, controladoria e operações em soluções limpas e funcionais.
+          Minha jornada na tecnologia começou no lugar mais crítico de qualquer empresa: os dados que guiam as decisões estratégicas. Atuando desde 2018 com BI (Business Intelligence), aprendi a traduzir problemas operacionais complexos — seja em finanças, logística, estoque ou recursos humanos — em visões analíticas limpas e compreensíveis.
         </p>
         <p>
-          Minha transição para o desenvolvimento de software foi um passo natural. Percebi que além de apresentar dados, as empresas precisam de sistemas ágeis (como aplicativos internos) para gerá-los e tratá-los de forma qualificada.
+          Com o tempo, percebi que desenhar gráficos bonitos não bastava se as planilhas de origem estivessem quebradas ou se a coleta dependesse de preenchimento manual lento. A transição para o desenvolvimento de software foi um passo natural: decidi ir à raiz do problema, construindo integrações robustas (APIs) e aplicativos internos eficientes para garantir que os dados nasçam corretos desde o primeiro clique.
         </p>
         <p>
-          Hoje atuo unindo esses dois mundos: garanto que o pipeline de dados (ETL, bancos) seja otimizado, enquanto crio aplicações robustas focadas no usuário final corporativo.
+          Hoje, atuo exatamente nesse cruzamento. Sou a ponte entre a engenharia de dados invisível (ETL, orquestração e banco de dados) e o software que o usuário final adora usar.
         </p>
       </div>
 
@@ -1234,9 +1249,9 @@
       
       <div class="contact-info">
         <div>
-          <span class="section-tag">Contato Profissional</span>
-          <h2 class="contact-info-title">Falar sobre Projetos</h2>
-          <p class="contact-info-desc">
+          <span class="section-tag" data-i18n="contact_tag">Contato Profissional</span>
+          <h2 class="contact-info-title" data-i18n="contact_title">Falar sobre Projetos</h2>
+          <p class="contact-info-desc" data-i18n="contact_desc">
             Caso precise desenvolver soluções customizadas de dashboards, pipelines automatizados de dados, integrações de APIs ou aplicativos corporativos internos, entre em contato pelos canais diretos ou envie uma mensagem no formulário.
           </p>
         </div>
@@ -1268,7 +1283,7 @@
             </div>
             <div class="contact-method-details">
               <h4>WhatsApp Comercial</h4>
-              <p><a href="https://wa.me/5511987279615" target="_blank"><i data-lucide="phone" style="width: 12px; height: 12px; display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; margin-right: 4px;"></i>(11) 98727-9615</a></p>
+              <p><a href="https://wa.me/5511995068287" target="_blank"><i data-lucide="phone" style="width: 12px; height: 12px; display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; margin-right: 4px;"></i>(11) 99506-8287</a></p>
             </div>
           </div>
         </div>
@@ -1278,16 +1293,16 @@
         <form id="contact-form">
           <div class="form-grid">
             <div class="form-group">
-              <label for="name" class="form-label">Nome *</label>
+              <label for="name" class="form-label" data-i18n="lbl_name">Nome *</label>
               <input type="text" id="name" class="form-input" placeholder="Ex: Gustavo Aveloes" required>
             </div>
             <div class="form-group">
-              <label for="email" class="form-label">E-mail *</label>
+              <label for="email" class="form-label" data-i18n="lbl_email">E-mail *</label>
               <input type="email" id="email" class="form-input" placeholder="Ex: nome@empresa.com" required>
             </div>
             <div class="form-group form-group-full">
-              <label for="service" class="form-label">Área de Interesse *</label>
-              <select id="service" class="form-input" style="background-color: #11141b;" required>
+              <label for="service" class="form-label" data-i18n="lbl_interest">Área de Interesse *</label>
+              <select id="service" class="form-input" required>
                 <option value="dashboards">Dados & BI (Power BI, Tableau)</option>
                 <option value="automacoes">Automação de Processos (Python, ETL)</option>
                 <option value="apps">Aplicativos Internos (FlutterFlow, Supabase)</option>
@@ -1295,12 +1310,12 @@
               </select>
             </div>
             <div class="form-group form-group-full">
-              <label for="message" class="form-label">Mensagem / Escopo da Demanda *</label>
+              <label for="message" class="form-label" data-i18n="lbl_message">Mensagem / Escopo da Demanda *</label>
               <textarea id="message" class="form-textarea" placeholder="Descreva o escopo da sua necessidade ou projeto..." required></textarea>
             </div>
           </div>
           <button type="submit" class="btn btn-primary" style="width: 100%;">
-            <i data-lucide="send" style="width: 16px; height: 16px;"></i> Enviar Mensagem
+            <i data-lucide="send" style="width: 16px; height: 16px;"></i> <span data-i18n="btn_send">Enviar Mensagem</span>
           </button>
           <div id="form-status" class="form-status"></div>
         </form>
