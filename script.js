@@ -18,6 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
     currentYearSpan.textContent = new Date().getFullYear();
   }
 
+  // --- 1.5 BOTÃO DE ALTERNAR TEMA (SOL / LUA) ---
+  const themeToggleBtn = document.getElementById('theme-toggle');
+
+  function initTheme() {
+    const savedTheme = localStorage.getItem('portfolio-theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+
+  initTheme();
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('portfolio-theme', newTheme);
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  }
+
   // --- 2. HEADER SCROLL & LINK ATIVO ---
   window.addEventListener('scroll', () => {
     // Efeito de rolagem do header

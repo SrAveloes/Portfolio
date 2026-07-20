@@ -294,6 +294,52 @@ h1, h2, h3, h4, h5, h6 {
   user-select: none;
 }
 
+/* --- THEME TOGGLE BUTTON (SUN / MOON) --- */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.05);
+  border: 1px solid var(--border-light);
+  color: var(--text-title);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--primary-blue-muted);
+  color: var(--primary-blue);
+  transform: scale(1.06);
+}
+
+html[data-theme="dark"] .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+html[data-theme="dark"] .icon-moon {
+  display: none !important;
+}
+
+html[data-theme="dark"] .icon-sun {
+  display: inline-block !important;
+  color: #fbbf24 !important;
+}
+
+html:not([data-theme="dark"]) .icon-sun {
+  display: none !important;
+}
+
+html:not([data-theme="dark"]) .icon-moon {
+  display: inline-block !important;
+  color: #0f172a !important;
+}
+
 .nav-cta {
   font-size: 0.8rem;
   padding: 6px 12px;
@@ -1185,6 +1231,85 @@ select.form-input option {
   .pipeline-container::before {
     display: none; /* remove a linha conectora */
   }
+}
+
+/* --- MANUAL DARK THEME (data-theme="dark") --- */
+html[data-theme="dark"] {
+  --bg-primary: #0b0f19;
+  --bg-secondary: #111827;
+  --bg-card: #1e293b;
+  --bg-glass: rgba(17, 24, 39, 0.92);
+  
+  --primary-blue: #3b82f6;
+  --primary-blue-muted: rgba(59, 130, 246, 0.15);
+  --primary-cyan: #38bdf8;
+  
+  --text-main: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-white: #ffffff;
+  --text-title: #ffffff;
+  
+  --border-light: rgba(255, 255, 255, 0.12);
+  --border-focus: rgba(56, 189, 248, 0.4);
+}
+
+html[data-theme="dark"] body::before {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+html[data-theme="dark"] .header {
+  background: rgba(17, 24, 39, 0.92);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .section-title,
+html[data-theme="dark"] .hero-title-name,
+html[data-theme="dark"] .contact-info-title,
+html[data-theme="dark"] .logo,
+html[data-theme="dark"] .logo span,
+html[data-theme="dark"] .timeline-role,
+html[data-theme="dark"] .project-title,
+html[data-theme="dark"] .service-title,
+html[data-theme="dark"] .skills-category-title,
+html[data-theme="dark"] .about-bullets-card h4,
+html[data-theme="dark"] .detail-subtitle,
+html[data-theme="dark"] .drawer-content h3,
+html[data-theme="dark"] .contact-method-details p {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html[data-theme="dark"] .case-part strong,
+html[data-theme="dark"] .service-feature-item strong {
+  color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .project-card,
+html[data-theme="dark"] .service-card,
+html[data-theme="dark"] .metric-item,
+html[data-theme="dark"] .timeline-content,
+html[data-theme="dark"] .skills-category,
+html[data-theme="dark"] .about-bullets-card,
+html[data-theme="dark"] .contact-form-container,
+html[data-theme="dark"] .contact-method-card,
+html[data-theme="dark"] .tech-badge-card {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html[data-theme="dark"] .form-input,
+html[data-theme="dark"] .form-textarea,
+html[data-theme="dark"] select.form-input {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html[data-theme="dark"] select.form-input option {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
 }
 
 /* --- SYSTEM DARK MODE SUPPORT --- */
